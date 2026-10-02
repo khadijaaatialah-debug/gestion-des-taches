@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS todolist
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+
+USE todolist;
+
+CREATE TABLE IF NOT EXISTS todo (
+  id         BIGINT        NOT NULL AUTO_INCREMENT,
+  title      VARCHAR(2048) NOT NULL,
+  done       TINYINT(1)    NOT NULL DEFAULT 0,
+  created_at TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB;
